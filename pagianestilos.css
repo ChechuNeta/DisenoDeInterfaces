@@ -1,0 +1,66 @@
+h1
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 + p
+{
+    font-size: 18px;
+}
+
+
+/*/////////////////////////////////////////////////*/
+.cuerpo3 
+{
+    margin-top: 3rem ;
+    margin-bottom: 3rem ;	
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+    /* overflow: auto; */
+}
+/*//////////////////////////////////////////////////*/
+
+
+.caja
+{
+    position: relative;
+    width: 25em; 
+    height: 36em;	
+    border: 3px solid rgb(161, 155, 155);
+}
+
+
+div[class^="caja"] p , h1
+{
+    margin: 2em;
+   
+}
+
+.imagen
+{
+    position: relative;
+    background-image: url('img_flwr.gif');
+    width: 25em;
+    min-width: 20em;
+    height: 30%;
+    background-clip: padding-box; 
+}
+
+
+@media (max-width: 84em) /* la suma de las cajas + los margenes del cuerpo y el padding */
+{
+    .cuerpo3:last-child
+    {
+        justify-content: center; 
+        padding-left: 2em;
+    }
+    
+}
+
+
+
+
