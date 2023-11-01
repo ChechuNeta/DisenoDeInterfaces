@@ -9,6 +9,29 @@ h1 ~ p
     font-size: 16px;
 }
 
+/*///////////////////////////////////////////////////////*/
+
+.cuerpo2
+{
+    border: 1px solid rgb(161, 155, 155);
+    margin-top: 1em;
+    height: 34em;
+    background-image: url("molinos-generica24.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box; 
+    padding-left: 8em;
+    padding-top: 6em;
+}
+
+div#texto
+{
+    position: absolute;
+    top:10%;
+    left:8%;
+    color: rgba(255, 8, 0, 0.979);
+    width: 36em;
+}
 
 /*/////////////////////////////////////////////////*/
 .cuerpo3 
@@ -22,8 +45,6 @@ h1 ~ p
     padding-right: 2em;
     /* overflow: auto; */
 }
-/*//////////////////////////////////////////////////*/
-
 
 .caja
 {
@@ -34,11 +55,11 @@ h1 ~ p
 }
 
 
-div[class^="caja"] p , h1
+div.caja p , div.caja h1
 {
     margin: 2em;
-   
 }
+
 
 .imagen
 {
@@ -49,14 +70,14 @@ div[class^="caja"] p , h1
     height: 30%;
     background-clip: padding-box; 
 }
-
+/*//////////////////////////////////////////////////*/
 
 @media (max-width: 84em) /* la suma de las cajas + los margenes del cuerpo y el padding */
 {
     .cuerpo3:last-child
     {
         justify-content: center; 
-        padding-left: 2em;
+        /* padding-left: 2em; */
     }
     
 }
