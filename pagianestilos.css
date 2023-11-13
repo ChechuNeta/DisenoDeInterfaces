@@ -12,7 +12,7 @@ h1 ~ p
 }
 
 
-/**************************************************/
+/************************CUERPO1**************************/
 .cuerpo1
 {
     border: 1px solid black;
@@ -49,13 +49,19 @@ h1 ~ p
     padding-right: 6em;
 }
 
+.cuerpo1 .opciones label:hover
+{
+    color: red;
+    text-decoration: underline;
+}
+
 label:last-child
 {
     display: none;
 }
 
 
-/*///////////////////////////////////////////////////////*/
+/************************CUERPO2**************************/
 
 .cuerpo2
 {
@@ -72,6 +78,11 @@ label:last-child
     z-index: 0;
 }
 
+.cuerpo2:hover /*si se hace pequeña la pagina el texto se puede seguir leyendo moviendo a la derecha*/
+{
+    overflow: auto;
+}
+
 div#texto
 {
     position: absolute;
@@ -82,7 +93,7 @@ div#texto
     /* overflow: auto; */
 }
 
-/*/////////////////////////////////////////////////*/
+/************************CUERPO3**************************/
 
 .cuerpo3 
 {
@@ -102,6 +113,11 @@ div#texto
     width: 25em; 
     height: 36em;	
     border: 3px solid rgb(161, 155, 155);
+}
+
+.caja:hover
+{
+    box-shadow: 0px 0px 20px goldenrod;
 }
 
 
@@ -169,6 +185,12 @@ div.caja p , div.caja h1
     {
         justify-content: center; 
         /* padding-left: 2em; */
+    }
+
+    .caja
+    {
+       margin-top: 0.5em;
+       margin-left: 0.5em;
     }
     
 }
