@@ -42,6 +42,12 @@ h1 ~ p
     height: 90%;
 }
 
+img[id="usu"]:hover
+{
+    filter: drop-shadow(0px 0px 5px yellow);
+    
+}
+
 .cuerpo1 .opciones label
 {
     font-family: Arial, Helvetica, sans-serif;
@@ -144,24 +150,48 @@ div.caja p , div.caja h1
     border: 1px solid black;
     /* height: 7em; */
     background-color: rgb(46, 44, 39);
-    align-items: center;  
-    display: flex;  
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2.5em;
+    position: relative;
+    height: 9em;
+    
 }
 
 .minienlaces
 {
-    
+    position: absolute;
+    top:0px;
+    left:1px;
+    color: rgb(173, 171, 171);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 90%;
-    width: 6em;
-    display: wrap;
-    align-items: center;
+    width: 8em;
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
 }
+
+.minienlaces a:hover
+{
+    color: white;
+}
+
+.lista1
+{
+    width: 3em;
+    position: top left;
+}
+.lista2
+{
+    width: 3em;
+    position: top right;
+}
+
 
 .redes
 {
+    position: absolute;
+    top:2em;
+    right:0px;
     height: 90%;
     display: wrap;
     align-items: center;
@@ -199,15 +229,15 @@ div.caja p , div.caja h1
 {
     .cuerpo4
     {
-        justify-content: center; 
+        height: 19em;
+        /* text-align: center; */
         /* padding-left: 2em; */
     }
-
     .redes
     {
         margin-top: 2em;
         height: 90%;
-        text-align: center;
+        top: 8em;
     }
 
     img:nth-child(n-1)
