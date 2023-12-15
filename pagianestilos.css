@@ -1,0 +1,251 @@
+
+
+h1
+{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+h1 ~ p
+{
+    font-size: 16px;
+}
+
+
+/************************CUERPO1**************************/
+.cuerpo1
+{
+    border: 1px solid black;
+    position: sticky;
+    top: 0px;
+    height: 4em;
+    background-color: rgb(231, 197, 123);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+    padding-right: 4em;
+    
+}
+
+
+
+.cuerpo1 #logo
+{
+    height: 90%;
+}
+.cuerpo1 #usu
+{
+    position: absolute;
+    top:5%;
+    right: 2px;
+    height: 90%;
+}
+
+img[id="usu"]:hover
+{
+    filter: drop-shadow(0px 0px 5px yellow);
+    
+}
+
+.cuerpo1 .opciones label
+{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 1em;
+    padding-right: 6em;
+}
+
+.cuerpo1 .opciones label:hover
+{
+    color: red;
+    text-decoration: underline;
+}
+
+label:last-child
+{
+    display: none;
+}
+
+
+/************************CUERPO2**************************/
+
+.cuerpo2
+{
+    position: relative;
+    border: 1px solid rgb(161, 155, 155);
+    margin-top: 1em;
+    height: 30em;
+    background-image: url("molinos-generica24.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: border-box; 
+    /* padding-left: 8em;
+    padding-top: 6em; */
+    z-index: 0;
+}
+
+.cuerpo2:hover /*si se hace pequeña la pagina el texto se puede seguir leyendo moviendo a la derecha*/
+{
+    overflow: auto;
+}
+
+div#texto
+{
+    position: absolute;
+    top:10%;
+    left:8%;
+    color: white;
+    width: 36em;
+    /* overflow: auto; */
+}
+
+/************************CUERPO3**************************/
+
+.cuerpo3 
+{
+    margin-top: 3rem ;
+    margin-bottom: 3rem ;	
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+    /* overflow: auto; */
+}
+
+.caja
+{
+    position: relative;
+    width: 25em; 
+    height: 36em;	
+    border: 3px solid rgb(161, 155, 155);
+}
+
+.caja:hover
+{
+    box-shadow: 0px 0px 20px goldenrod;
+}
+
+
+div.caja p , div.caja h1
+{
+    margin: 2em;
+}
+
+
+.imagen
+{
+    
+    background-image: url('img_flwr.gif');
+    width: 25em;
+    height: 30%;
+    background-clip: padding-box; 
+}
+
+/*************************CUERPO4**************************/
+
+.cuerpo4
+{
+
+    border: 1px solid black;
+    /* height: 7em; */
+    background-color: rgb(46, 44, 39);
+    position: relative;
+    height: 9em;
+    
+}
+
+.minienlaces
+{
+    position: absolute;
+    top:0px;
+    left:1px;
+    color: rgb(173, 171, 171);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 90%;
+    width: 8em;
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+
+.minienlaces a:hover
+{
+    color: white;
+}
+
+.lista1
+{
+    width: 3em;
+    position: top left;
+}
+.lista2
+{
+    width: 3em;
+    position: top right;
+}
+
+
+.redes
+{
+    position: absolute;
+    top:2em;
+    right:2em;
+    height: 90%;
+    display: wrap;
+    align-items: center;
+}
+
+.redes img
+{
+    width: 4em;   
+}
+
+.redes img:nth-child(n-1)
+{
+    padding-left: 1em;
+}
+
+/************************************MEDIAS**********************************************/
+
+@media (max-width: 84em) /* la suma de las cajas + los margenes del cuerpo y el padding */
+{
+    .cuerpo3
+    {
+        justify-content: center; 
+        /* padding-left: 2em; */
+    }
+
+    .caja
+    {
+       margin-top: 0.5em;
+       margin-left: 0.5em;
+    }
+    
+}
+
+@media (max-width: 34em) /* la suma de las imagenes + los paddings del cuerpo + minidivs */
+{
+    .cuerpo4
+    {
+        height: 19em;
+        /* text-align: center; */
+        /* padding-left: 2em; */
+    }
+    .redes
+    {
+        margin-top: 2em;
+        height: 90%;
+        top: 8em;
+    }
+
+    img:nth-child(n-1)
+    {
+        padding-right: 1em;
+    }
+    
+}
+
+
+
