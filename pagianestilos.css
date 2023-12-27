@@ -2,13 +2,13 @@
 
 h1
 {
-    font-size: 1.438em;
+    font-size: 1.438rem;
     font-weight: bold;
 }
 
 h1 ~ p
 {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 #grid
@@ -16,10 +16,11 @@ h1 ~ p
     display:grid;
     overflow-y: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 5rem 15rem 15rem 5rem ; 
+    grid-template-rows: 10rem 30rem 30rem 10rem ; 
     grid-template-areas: "encabezado" "introduccion" "cuerpo" "pie";
     grid-gap:1em;
 }
+
 
 
 .cuerpo1
@@ -30,7 +31,67 @@ h1 ~ p
     top: 0px;
     z-index: 1;  
     background-color: rgb(231, 197, 123);
+
+
 }
+
+.cuerpo1 #menu
+{
+    position: absolute;
+    top:20px;
+    right: 20px;
+    height: 30%;
+}
+
+img[id="menu"]:hover
+{
+    filter: drop-shadow(0px 0px 5px yellow);
+    
+}
+
+.cuerpo1 #logo
+{
+    position: absolute;
+    top:5%;
+    left: 4px;
+    height: 90%;
+}
+
+img[id="usu"]
+{
+    height: 1em;
+}
+
+
+.opciones 
+{
+    display: none;
+    background-color: rgb(245, 212, 103);
+    box-shadow: 0px 0px 20px rgb(26, 25, 25);
+
+    position: absolute;
+    top:5%;
+    right: 2px;
+}
+
+#menu:hover + .opciones, .opciones:hover 
+{
+    display: block;
+}
+
+.opciones label
+{
+    padding: 12px 16px;
+    display: block;
+}
+
+.opciones label:hover
+{
+    background-color: #f1f1f1;
+}
+
+
+
 
 .cuerpo2
 {
@@ -55,27 +116,24 @@ h1 ~ p
     background-color: rgb(46, 44, 39);
 }
 
+@media (min-width: 570px) 
+{
+ 
+    #grid
+{
+    
+    grid-template-rows: 5rem 15rem 15rem 5rem ; 
+   
+}
+    
+}
+
 
 /************************CUERPO1**************************/
 /*
 
-.cuerpo1 #logo
-{
-    height: 90%;
-}
-.cuerpo1 #usu
-{
-    position: absolute;
-    top:5%;
-    right: 2px;
-    height: 90%;
-}
 
-img[id="usu"]:hover
-{
-    filter: drop-shadow(0px 0px 5px yellow);
-    
-}
+
 
 .cuerpo1 .opciones label
 {
