@@ -16,13 +16,13 @@ h1 ~ p
     display:grid;
     overflow-y: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 10rem 30rem 30rem 10rem ; 
+    grid-template-rows: 7rem 20rem 10rem 7rem ; 
     grid-template-areas: "encabezado" "introduccion" "cuerpo" "pie";
     grid-gap:1em;
 }
 
 
-
+/************************CUERPO1**************************/
 .cuerpo1
 {
     grid-area:"encabezado" ;
@@ -40,7 +40,7 @@ h1 ~ p
     position: absolute;
     top:20px;
     right: 20px;
-    height: 30%;
+    height: 35%;
 }
 
 img[id="menu"]:hover
@@ -60,15 +60,14 @@ img[id="menu"]:hover
 img[id="usu"]
 {
     height: 1em;
+    display: inline;
 }
-
 
 .opciones 
 {
     display: none;
     background-color: rgb(245, 212, 103);
     box-shadow: 0px 0px 20px rgb(26, 25, 25);
-
     position: absolute;
     top:5%;
     right: 2px;
@@ -90,20 +89,38 @@ img[id="usu"]
     background-color: #f1f1f1;
 }
 
+.opciones label:last-child
+{
+    display: none;
+}
 
 
+/************************CUERPO2**************************/
 
 .cuerpo2
 {
     grid-area: "introduccion";
     border: 1px solid rgb(161, 155, 155);
-    /* z-index: 0; */
-    /* background-image: url("molinos-generica24.jpg");
+    z-index: 0; 
+    background-image: url("molinos-generica24.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-origin: border-box;   */
+
 }
 
+.cuerpo2 #texto
+{
+    /* position: absolute;
+    top:10%;
+    left:8%; */
+    grid-column: 1 / 2;
+    color: white;
+    text-align: center;
+    
+   
+  
+}
+/*
 .cuerpo3 
 {
     grid-area: "cuerpo";
@@ -148,10 +165,7 @@ img[id="usu"]
     text-decoration: underline;
 }
 
-label:last-child
-{
-    display: none;
-} */
+ */
 
 
 /************************CUERPO2**************************/
@@ -163,15 +177,7 @@ label:last-child
     overflow: auto;
 }
 
-div#texto
-{
-    position: absolute;
-    top:10%;
-    left:8%;
-    color: white;
-    width: 36em;
-  
-} */
+ */
 
 /************************CUERPO3**************************/
 
