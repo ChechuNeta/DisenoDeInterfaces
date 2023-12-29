@@ -16,7 +16,7 @@ h1 ~ p
     display:grid;
     overflow-y: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 7rem 20rem 10rem 7rem ; 
+    grid-template-rows: 7rem 20rem 30rem 7rem ; 
     grid-template-areas: "encabezado" "introduccion" "cuerpo" "pie";
     grid-gap:1em;
 }
@@ -113,6 +113,8 @@ img[id="usu"]
     /* position: absolute;
     top:10%;
     left:8%; */
+   
+    
     grid-column: 1 / 2;
     color: white;
     text-align: center;
@@ -121,19 +123,144 @@ img[id="usu"]
   
 }
 
+/************************CUERPO3**************************/
+
 .cuerpo3 
 {
+    
     grid-area: "cuerpo";
+    display: grid;
+    grid-template-columns: repeat(3, 20rem);
+    grid-gap: 1.3em;
+    overflow-x: auto;
+
 }
 
+.caja1 
+{
+    grid-column: 1 / 2;
+    border: 3px solid rgb(161, 155, 155);
+    overflow-y: auto;
+}
+
+.caja2 
+{
+    grid-column: 2 / 3;
+    border: 3px solid rgb(161, 155, 155);
+    overflow-y: auto;
+}
+
+.caja3 
+{
+    grid-column: 3 / 4;
+    border: 3px solid rgb(161, 155, 155);
+    overflow-y: auto;
+}
+
+.imagen
+{
+    
+    background-image: url('img_flwr.gif');
+    width: 100%;
+    height: 30%;
+    background-clip: padding-box; 
+}
+
+
+
+div.caja1 p , div.caja1 h1
+{
+    margin: 2em;
+}
+div.caja2 p , div.caja2 h1
+{
+    margin: 2em;
+}
+div.caja3 p , div.caja3 h1
+{
+    margin: 2em;
+}
+
+
+
+
+
+/************************CUERPO4**************************/
 .cuerpo4
 {
     grid-area: "pie";
     border: 1px solid black;
     background-color: rgb(46, 44, 39);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
 }
 
-@media (min-width: 570px) 
+.lista1
+{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    color: rgba(255, 255, 255, 0.767);
+    
+}
+.lista2
+{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    color: rgba(255, 255, 255, 0.767);
+}
+
+.redesimagenes
+{
+    display: none;
+}
+
+.redesnombres
+{
+    grid-row: 2 / 3;
+    grid-column: 1 / span 2;
+    align-self: end;
+    justify-self: center;
+}
+
+.redesnombres a:link
+{
+    color: rgba(255, 255, 255, 0.397);
+}
+
+.redesnombres a:visited
+{
+    color: rgba(63, 145, 238, 0.623);
+}
+
+
+
+/* @media (min-width: 768px) and (orientation: landscape) {
+    #grid {
+      display: grid;
+      grid-template-rows: 1fr 2fr 2fr 1fr ; 
+     
+      height: 100vh; 
+      justify-content: space-between;
+    }
+  
+    .cuerpo3 {
+      overflow-x: auto;
+      justify-content: space-evenly;
+      
+      width: 100%; 
+    }
+  
+    .caja1, .caja2, .caja3 {
+      
+      display: inline-block;
+     
+    }
+  } */
+
+
+/* @media (min-width: 570px) 
 {
  
     #grid
@@ -141,9 +268,9 @@ img[id="usu"]
     
     grid-template-rows: 5rem 15rem 15rem 5rem ; 
    
-}
+} 
     
-}
+}*/
 
 
 /************************CUERPO1**************************/
@@ -191,26 +318,10 @@ img[id="usu"]
     border: 3px solid rgb(161, 155, 155);
 }
 
-.caja:hover
-{
-    box-shadow: 0px 0px 20px goldenrod;
-}
 
 
-div.caja p , div.caja h1
-{
-    margin: 2em;
-}
 
-
-.imagen
-{
-    
-    background-image: url('img_flwr.gif');
-    width: 25em;
-    height: 30%;
-    background-clip: padding-box; 
-} */
+ */
 
 /*************************CUERPO4**************************/
 /* 
