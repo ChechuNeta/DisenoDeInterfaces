@@ -16,7 +16,7 @@ h1 ~ p
     display:grid;
     overflow-y: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 7rem 18rem 30rem 7rem ; 
+    grid-template-rows: 7rem 21rem 30rem 7rem ; 
     grid-template-areas: "encabezado" "introduccion" "cuerpo" "pie";
     grid-gap:1em;
 }
