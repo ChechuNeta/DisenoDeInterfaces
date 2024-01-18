@@ -16,7 +16,7 @@ h1 ~ p
     display:grid;
     overflow-y: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 7rem 21rem 30rem 7rem ; 
+    grid-template-rows: 7rem 21rem 30rem auto ; 
     grid-template-areas: "encabezado" "introduccion" "cuerpo" "pie";
     grid-gap:1em;
 }
@@ -40,7 +40,7 @@ h1 ~ p
     visibility: hidden;
 }
 
-.menudesplegable
+.opciones1
 {
     visibility: hidden;
 }
@@ -260,7 +260,7 @@ div.caja c p , div.caja c h1
  {
     #grid 
     {
-      grid-template-rows: 7rem 15rem 57.05rem 10rem ; 
+      grid-template-rows: 7rem 15rem 57.05rem auto ; 
     }
 
 
@@ -332,59 +332,194 @@ div.caja c p , div.caja c h1
 
     #grid
     {
-        grid-template-rows: 7rem 20rem 30rem 7rem ;  
+        grid-template-rows: 4.5rem 28rem auto 10rem ;  
     }
 
+/************************CUERPO1**************************/
     #menu
     {
         display: none;
     }
-    
 
-    .menudesplegable
-    {
-        
-        display: grid;
-        width: 80%;
-        visibility: visible;
-        justify-content:space-around;
-        
-    }
-
-    
     .opciones1
     {
-        grid-column: 2 / 3;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        visibility:visible;
+        margin-left: 5em;
     }
 
+    .cuerpo1
+    {
+        border: 1px solid black;
+        position: sticky;
+        top: 0px;
+        
+        background-color: rgb(231, 197, 123);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 3px;
+        padding-right: 4em;   
+    }
+    
+    .cuerpo1 #logo
+    {
+        height: 90%;
+    }
     .cuerpo1 #usu
     {
-        visibility: visible;
         position: absolute;
         top:5%;
         right: 2px;
         height: 90%;
+        visibility: visible;
     }
-
+    
     img[id="usu"]:hover
     {
         filter: drop-shadow(0px 0px 5px yellow);
         
     }
-
-
-    /* .opciones
+    
+    .cuerpo1 .opciones1 label
     {
-        align-self: center;
-        justify-self: center; 
+        font-family: Arial, Helvetica, sans-serif;
+        padding-left: 1em;
+        padding-right: 6em;
+    }
+    
+    .cuerpo1 .opciones1 label:hover
+    {
+        color: red;
+        text-decoration: underline;
+    }
+    
+    label:last-child
+    {
+        display: none;
+    }
+    /************************CUERPO1**************************/
 
-    } */
+
+    /************************CUERPO2**************************/
+    .cuerpo2 #texto
+    {
+        width: 37em;
+        text-align: left;
+        margin-left: 7em;
+        margin-top: 5em;
+    }
+    /************************CUERPO2**************************/
+
+    /************************CUERPO3**************************/
+    .cuerpo3 
+    {
+        
+        display: flex;  
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 2em;
+        padding-right: 2em;
+    
+    }
+
+    .caja
+    {
+        margin-top: 0.35em;
+        border: 3px solid rgb(161, 155, 155);
+        height: 36em;
+        width: 25em;
+        
+    }
+    /************************CUERPO3**************************/
+    .imagen
+    {
+        
+        background-image: url('paisaje.jpg');
+        background-size: cover;
+        width: 100%;
+        height: 30%;
+        background-origin:padding-box;
+
+    }
+
+    .caja
+    {
+        display: block;
+    }
+    
+    .caja:hover
+    {
+        box-shadow: 0px 0px 20px goldenrod;
+    }
+
+    .caja .imagen
+    {
+        margin-bottom: 4em;
+    }
+
+   .caja h1, .caja p 
+   {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+   }
 
 
+    /************************CUERPO4**************************/
+
+    .cuerpo4
+    {
+        display: flex;
+        position: relative;  
+        color: grey;
+    }
+
+    .lista1
+    {
+        position: absolute;
+        top:0px;
+        left:15px;
+        display: block;
+    }
+    .lista2
+    {
+        position: absolute;
+        top:0px;
+        left:200px;  
+        display: block;
+    }
+
+    .lista1 a
+    {
+        display: block;
+        padding-left: 5px;
+    }
+
+    .lista2 a
+    {
+        display: block;
+        padding-left: 5px;
+    }
+
+    .lista1 a:hover
+    {
+        color: white;
+    }
+
+    .lista2 a:hover
+    {
+        color: white;
+    }
+
+    .redesimagenes
+    {
+        position: absolute;
+        top:45px;
+        right: 0px;
+    }
+
+    
  }
+
 
 /* @media (min-width: 570px) 
 {
@@ -542,6 +677,22 @@ div.caja c p , div.caja c h1
     }
     
 } */
+
+@media (max-width: 84em) /* la suma de las cajas + los margenes del cuerpo y el padding */
+{
+    .cuerpo3
+    {
+        justify-content: center; 
+        /* padding-left: 2em; */
+    }
+
+    .caja
+    {
+       margin-top: 0.5em;
+       margin-left: 0.5em;
+    }
+    
+}
 
 
 
