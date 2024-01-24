@@ -37,7 +37,8 @@ h1 ~ p
 
 .cuerpo1 #usu
 {
-    visibility: hidden;
+    display: none;
+   
 }
 
 .opciones1
@@ -360,7 +361,7 @@ div.caja p , div.caja h1
         top:5%;
         right: 2px;
         height: 90%;
-        visibility: visible;
+        display: inline;
     }
     
     img[id="usu"]:hover
