@@ -140,7 +140,7 @@ img[id="usuario3"]
     grid-template-columns: repeat(3, 20rem);
     grid-gap: 1.3em;
     overflow-x: auto;
-    justify-content: space-between;
+    
     
 
 }
@@ -502,7 +502,7 @@ div.caja p , div.caja h1
 
 
 
-@media (max-width: 84em) /* la suma de las cajas + los margenes del cuerpo y el padding */
+@media (max-width: 84em) and (min-width: 768px) /* la suma de las cajas + los margenes del cuerpo y el padding */
 {
     .cuerpo3
     {
