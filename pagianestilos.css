@@ -16,7 +16,7 @@ h1 ~ p
     display:grid;
     overflow-y: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 7rem 21rem 30rem auto ; 
+    grid-template-rows: 7rem auto 30rem auto ; 
     grid-template-areas: "encabezado" "introduccion" "cuerpo" "pie";
     grid-gap:1em;
 }
@@ -117,9 +117,20 @@ img[id="usuario3"]
     background-image: url("molinos-generica24.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-
+    display: block;
+    
 }
 
+.cuerpo2 .video
+{
+    text-align: center;
+}
+
+.cuerpo2 .video iframe
+{
+    width:300px;
+    height:280px; 
+}
 .cuerpo2 #texto
 {
   
@@ -156,6 +167,12 @@ la derecha o a la izquierda, se centrara la siguiente caja automáticamente, de 
 El javascript no ha sido implementado porque no llego a ser eficiente
 */
 
+
+.videomp4
+{
+    width: 295px;
+    
+}
 .a 
 {
     grid-column: 1 / 2;    
@@ -243,8 +260,14 @@ div.caja p , div.caja h1
  {
     #grid 
     {
-      grid-template-rows: 7rem 15rem 57.2rem auto ; 
+      grid-template-rows: 7rem auto 57.2rem auto ; 
       grid-gap: 0.4em;
+    }
+
+    .cuerpo2 .video iframe
+    {
+        width:400px;
+        height:370px; 
     }
 
 
@@ -391,9 +414,30 @@ div.caja p , div.caja h1
 
 
     /************************CUERPO2**************************/
+    .cuerpo2
+    {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .cuerpo2 .video
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cuerpo2 .video iframe
+    {
+        width:400px;
+        height:320px; 
+        margin-right: 7em;
+    }
+
     .cuerpo2 #texto
     {
-        width: 37em;
+        width: 30em;
         text-align: left;
         margin-left: 7em;
         margin-top: 5em;
@@ -412,6 +456,10 @@ div.caja p , div.caja h1
     
     }
 
+    .videomp4
+    {
+         width: 381px;
+    }
     .caja
     {
         margin-top: 0.35em;
