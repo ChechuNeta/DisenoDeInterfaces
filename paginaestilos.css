@@ -1,0 +1,70 @@
+body
+{
+    background: linear-gradient(to right,  rgb(117, 115, 111), rgb(252, 252, 252) , rgb(117, 115, 111));
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+}
+
+.contenedor
+{
+    border: solid 5px rgb(66, 55, 55);
+    display: grid;
+    grid-template-rows: repeat(4 ,1fr);
+    gap: 1em;
+    width: 40em;
+    height: 30em;
+    justify-content: center;
+    padding: 1em;
+    
+}
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Usa una fuente de estilo retro de videojuego */
+    color:  rgba(234, 224, 81, 0.735); 
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el texto */
+    margin-bottom: 0.5em; /* Ajuste opcional del margen inferior */
+}
+
+select 
+{
+    width: 100%;
+    
+}
+
+select option 
+{
+    font-size: 25px;
+    text-align: center;
+ 
+}
+
+label
+{
+    padding: 2em;
+}
+
+.opcion
+{
+    font-size: 2em;
+    font-family: 'Press Start 2P', cursive; /* Usa una fuente de estilo retro de videojuego */
+    color: rgb(131, 111, 111); 
+}
+
+
+
+select:hover, button:hover
+{
+    background-color: rgba(234, 224, 81, 0.735);
+    box-shadow: 0px 0px 20px goldenrod;
+}
+
+
+#instrucciones
+{
+    display: none;
+}

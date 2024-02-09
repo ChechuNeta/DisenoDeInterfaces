@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="paginaestilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de juegos</title>
+</head>
+<body>
+
+
+<div class="contenedor">
+
+   
+        <h1>AIMLAB</h1>
+  
+        <button onclick="mostrarInstrucciones()"><h2 class="opcion">¿C&oacute;mo de juega?</h2></button>
+
+        <select class="opcion" name="dificultad">
+            <option value="1"><label>F&aacute;cil</label></option>
+            <option value="2"><label>Normal</label></option>
+            <option value="3"><label>Dif&iacute;cil</label></option>
+        </select>
+
+        <button><p class="opcion">JUGAR</p></button>
+   
+</div>
+
+<div id="instrucciones">
+    
+    <p>Texto de instrucciones</p>
+
+    <button onclick="ocultarInstrucciones()">Volver</button>
+
+</div>
+
+
+<script src="funciones.js"></script>
+    
+</body>
+</html>
