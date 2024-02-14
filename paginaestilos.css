@@ -8,6 +8,11 @@ body
     margin: 0;
 }
 
+body, button
+{
+    cursor: url('cursor.png') 25 25, auto;
+}
+
 .contenedor
 {
     border: solid 5px rgb(66, 55, 55);
@@ -43,6 +48,7 @@ p
 select 
 {
     width: 100%;
+    cursor: url('cursor.png'), auto;
     
 }
 
@@ -50,6 +56,7 @@ select option
 {
     font-size: 25px;
     text-align: center;
+    cursor: url('cursor.png'), auto;
  
 }
 
@@ -60,6 +67,7 @@ label
 
 .opcion
 {
+   
     font-size: 2em;
     font-family: 'Press Start 2P', cursive; /* Usa una fuente de estilo retro de videojuego */
     color: rgb(131, 111, 111); 
@@ -91,6 +99,19 @@ select:hover, button:hover
 
 #instrucciones button 
 {
+    cursor: url('cursor.png') 25 25, auto;
     margin: 0 auto;
     display: block;
+}
+
+
+#target
+{
+    position: absolute;
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    display: none;
+    left: 0%;
+    top: 0%;
 }
