@@ -27,6 +27,25 @@ body, button
     
 }
 
+#pantallafinal
+{
+    border: solid 5px rgb(66, 55, 55);
+    border-radius: 12%;
+    display: none;
+    grid-template-rows: repeat(2 ,1fr);
+    gap: 1em;
+    width: 40em;
+    height: 30em;
+    justify-content: center;
+    padding: 1em;
+    
+}
+
+#pantallafinalvolver
+{
+    grid-row: 2/3;
+}
+
 h1 {
     font-size: 4em;
     text-align: center;

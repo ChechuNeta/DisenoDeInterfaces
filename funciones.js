@@ -9,19 +9,26 @@ function mostrarInstrucciones()
 
 function ocultarInstrucciones() 
 {
+    puntuacion = 0;
+    document.querySelector('.contenedor').style.display = 'grid';
     document.querySelector('.contenedor h1').style.display = 'block';
     document.querySelectorAll('.contenedor button, .contenedor select').forEach(element => {
         element.style.display = 'block';});
 
+    document.getElementById('pantallafinal').style.display = 'none';
     document.getElementById('instrucciones').style.display = 'none';
     document.getElementById('instruccionesVolver').style.display = 'none';
+    document.getElementById('pantallafinal').removeChild(document.getElementById("puntos"));
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
 var intervalodesaparecer;
 var target = document.getElementById("target");
+var fondo = document.getElementById("fondo");
 var juegoIniciado = false;
+var puntuacion = 0;
+let clicks = 0;
 
 function Empezarjuego(dificultad)
 {
@@ -30,15 +37,24 @@ function Empezarjuego(dificultad)
     target.style.display = 'block';
     reposicionar();
     
-   
+    
     if (!juegoIniciado) {
         juegoIniciado = true;
         setTimeout(function () {
-            document.querySelector('.contenedor').style.display = 'grid';
+            
+            document.getElementById('pantallafinal').style.display = 'grid';
+
+            puntos = document.createElement("p");
+            puntos.textContent= "Puntos: "+puntuacion;
+            puntos.style.grid_row= "1/2"; 
+            puntos.id="puntos";
+            botonvolver = document.getElementById("pantallafinalvolver");
+            document.getElementById("pantallafinal").insertBefore(puntos, botonvolver);
+
             target.style.display = 'none';
             juegoIniciado = false; 
             clearTimeout(intervalodesaparecer);
-        }, 20000); 
+        }, 5000); 
     }
     
 }
@@ -72,10 +88,28 @@ function randomIntFromInterval(min,max)
 
 target.onmousedown = function() 
 {
-    targetClick();
+    aciertoclick();
 }
 
-function targetClick()
+fondo.onmousedown = function() 
 {
-        reposicionar();   
+    falloclick();
+}
+
+function aciertoclick()
+{
+    if (juegoIniciado)
+    {
+        puntuacion +=1;
+        clicks +=1;
+        reposicionar();  
+    }        
+}
+
+function falloclick()
+{
+    if (juegoIniciado)
+    {
+        clicks +=1;     
+    }        
 }
