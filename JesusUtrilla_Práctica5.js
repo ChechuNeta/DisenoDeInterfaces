@@ -40,9 +40,24 @@ var listapuntuaciones =[];
 
 
 
-function Empezarjuego(dificultad)
+function Empezarjuego(eltiempo)
 {
     document.querySelector('.contenedor').style.display = 'none';
+    if(eltiempo == 1)
+    {
+        tiempo = 5000;
+    }
+    else
+    {
+        if(eltiempo == 2)
+        {
+            tiempo = 10000
+        }
+        else
+        {
+            tiempo= 15000;
+        }
+    }
     
     target.style.display = 'block';
     reposicionar();
@@ -61,6 +76,8 @@ function Empezarjuego(dificultad)
             puntos2.textContent= "Aciertos: "+puntuacion;
             puntos3 = document.createElement("p");
             puntos3.textContent= "Precisión: "+porcentajeacierto.toFixed(2)+"%";
+
+            decirGanador(puntuacion, tiempo);
           
             puntos1.id="puntosa";
             puntos2.id="puntosb";
@@ -81,10 +98,55 @@ function Empezarjuego(dificultad)
             target.style.display = 'none';
             juegoIniciado = false; 
             clearTimeout(intervalodesaparecer);
-        }, 5000); 
+        }, tiempo); 
     }
     
 }
+
+
+function decirGanador(numero, tiempo) 
+{
+    if(tiempo == 5000)
+    {
+        return new Promise((resolve, reject) => {
+        setTimeout(function () {
+        if (numero > 7) {
+        resolve(alert("Mas de 7 aciertos, ¡que locura!"));
+        } else {
+        reject(alert("Hay que espabilar!"));
+        }
+        }, 1000);
+        });
+    }
+    else
+    {
+        if(tiempo == 10000)
+        {
+            return new Promise((resolve, reject) => {
+                setTimeout(function () {
+                if (numero > 14) {
+                resolve(alert("Mas de 14 aciertos, ¡que locura!"));
+                } else {
+                reject(alert("Hay que espabilar!"));
+                }
+                }, 1000);
+                });
+        }
+        else
+        {
+            return new Promise((resolve, reject) => {
+                setTimeout(function () {
+                if (numero > 21) {
+                resolve(alert("Mas de 21 aciertos, ¡que locura!"));
+                } else {
+                reject(alert("Hay que espabilar!"));
+                }
+                }, 1000);
+                });
+        }
+    }
+   }
+
 
 function reposicionar() 
 {
@@ -108,6 +170,8 @@ function reposicionar()
     }, 1400);
    
 }
+
+
 function randomIntFromInterval(min,max)
 {
     return Math.floor( Math.random()*  ( max - min + 1 ) + min );
@@ -140,3 +204,5 @@ function falloclick()
         clicks +=1;     
     }        
 }
+
+
