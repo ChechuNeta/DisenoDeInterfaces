@@ -202,7 +202,22 @@ function falloclick()
     if (juegoIniciado)
     {
         clicks +=1;     
+
+        const posX = event.clientX - 40;  // Resta la mitad del ancho de la imagen
+        const posY = event.clientY - 60;  // Resta la mitad de la altura de la imagen
+        // Mostrar la imagen en la posición del clic
+        const imagenClick = document.getElementById('imagenClick');
+        imagenClick.style.left = posX + 'px';
+        imagenClick.style.top = posY + 'px';
+        imagenClick.style.display = 'block';
+
+        // Ocultar la imagen después de un segundo
+        setTimeout(function () {
+            imagenClick.style.display = 'none';
+        }, 1000);
     }        
 }
+
+
 
 
