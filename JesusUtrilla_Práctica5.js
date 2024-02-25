@@ -83,7 +83,10 @@ function Empezarjuego(eltiempo)
             puntos2.id="puntosb";
             puntos3.id="puntosc";
 
-            let puntuacionFinal = [puntuacion, porcentajeacierto];
+            // let puntuacionFinal = [puntuacion, porcentajeacierto];
+
+            decirGanador(puntuacion, tiempo).then(data => alert(data)).catch(data=>alert(data));
+           
     
             botonvolver = document.getElementById("pantallafinalvolver");
             document.getElementById("pantallafinal").insertBefore(puntos1, botonvolver);
@@ -96,7 +99,8 @@ function Empezarjuego(eltiempo)
             }
 
             target.style.display = 'none';
-            juegoIniciado = false; 
+            juegoIniciado = false;
+             
             clearTimeout(intervalodesaparecer);
         }, tiempo); 
     }
@@ -104,19 +108,21 @@ function Empezarjuego(eltiempo)
 }
 
 
+
 function decirGanador(numero, tiempo) 
 {
     if(tiempo == 5000)
     {
         return new Promise((resolve, reject) => {
-        setTimeout(function () {
-        if (numero > 7) {
-        resolve(alert("Mas de 7 aciertos, ¡que locura!"));
-        } else {
-        reject(alert("Hay que espabilar!"));
-        }
-        }, 1000);
-        });
+            setTimeout(function () {
+            if (numero > 7) {
+            resolve("aciertos o mas ¡que locura!");
+            } else {
+            reject("Hay que espabilar!");
+            }
+            }, 1000);
+            });
+        
     }
     else
     {
@@ -125,9 +131,9 @@ function decirGanador(numero, tiempo)
             return new Promise((resolve, reject) => {
                 setTimeout(function () {
                 if (numero > 14) {
-                resolve(alert("Mas de 14 aciertos, ¡que locura!"));
+                resolve("Mas de 14 aciertos, ¡que locura!");
                 } else {
-                reject(alert("Hay que espabilar!"));
+                reject("Hay que espabilar!");
                 }
                 }, 1000);
                 });
@@ -137,9 +143,9 @@ function decirGanador(numero, tiempo)
             return new Promise((resolve, reject) => {
                 setTimeout(function () {
                 if (numero > 21) {
-                resolve(alert("Mas de 21 aciertos, ¡que locura!"));
+                resolve("Mas de 21 aciertos, ¡que locura!");
                 } else {
-                reject(alert("Hay que espabilar!"));
+                reject("Hay que espabilar!");
                 }
                 }, 1000);
                 });
@@ -202,22 +208,7 @@ function falloclick()
     if (juegoIniciado)
     {
         clicks +=1;     
-
-        const posX = event.clientX - 40;  // Resta la mitad del ancho de la imagen
-        const posY = event.clientY - 60;  // Resta la mitad de la altura de la imagen
-        // Mostrar la imagen en la posición del clic
-        const imagenClick = document.getElementById('imagenClick');
-        imagenClick.style.left = posX + 'px';
-        imagenClick.style.top = posY + 'px';
-        imagenClick.style.display = 'block';
-
-        // Ocultar la imagen después de un segundo
-        setTimeout(function () {
-            imagenClick.style.display = 'none';
-        }, 1000);
     }        
 }
-
-
 
 
