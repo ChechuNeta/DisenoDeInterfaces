@@ -39,10 +39,82 @@ var clicks = 0;
 var listapuntuaciones =[];
 
 
+// var cuentaRegresiva = 3; // Inicializa con el número de segundos deseados
+// var cuentaRegresivaInterval;
+
+
+
+// function actualizarCuentaRegresiva() {
+
+//     document.querySelector('.contenedor').style.display = 'none';
+//     var cuentaRegresivaElement = document.createElement("div");
+//     cuentaRegresivaElement.id = "cuentaRegresiva";
+//     cuentaRegresivaElement.textContent = cuentaRegresiva;
+//     document.body.appendChild(cuentaRegresivaElement);
+//     cuentaRegresiva--;
+
+//    setTimeout(function () {
+//         document.body.removeChild(cuentaRegresivaElement);
+//         cuentaRegresiva--;
+
+//         if (cuentaRegresiva < 0) {
+//             clearInterval(cuentaRegresivaInterval);
+//             Empezarjuego(document.getElementById('tiempo').value);
+//         } else {
+//             actualizarCuentaRegresiva();
+//         }
+//     }, 1000);
+    
+// }
+// function iniciarCuentaRegresiva() {
+//     cuentaRegresivaInterval = setInterval(actualizarCuentaRegresiva, 1000);
+// }
+
+var cuentaRegresiva = 3;
+var cuentaRegresivaElement;
+var cuentaRegresivaInterval;
+
+function actualizarCuentaRegresiva() {
+    if (cuentaRegresivaElement) {
+        cuentaRegresivaElement.textContent = cuentaRegresiva;
+    }
+
+    cuentaRegresiva--;
+
+    if (cuentaRegresiva < 0) {
+        clearInterval(cuentaRegresivaInterval);
+        document.body.removeChild(cuentaRegresivaElement);
+        cuentaRegresivaElement = null;  // Limpiar la referencia al elemento
+        Empezarjuego(document.getElementById('tiempo').value);
+    }
+}
+
+function iniciarCuentaRegresiva() {
+    document.querySelector('.contenedor').style.display = 'none';
+
+    // Limpiar elementos antiguos si existen
+    if (cuentaRegresivaElement) {
+        document.body.removeChild(cuentaRegresivaElement);
+        cuentaRegresivaElement = null;
+    }
+
+    cuentaRegresivaElement = document.createElement("div");
+    cuentaRegresivaElement.id = "cuentaRegresiva";
+    document.body.appendChild(cuentaRegresivaElement);
+
+    cuentaRegresiva = 3;  // Reiniciar cuenta regresiva
+    cuentaRegresivaInterval = setInterval(actualizarCuentaRegresiva, 1000);
+}
+
+// Resto del código...
+
+
+
+
 
 function Empezarjuego(eltiempo)
 {
-    document.querySelector('.contenedor').style.display = 'none';
+    // document.querySelector('.contenedor').style.display = 'none';
     if(eltiempo == 1)
     {
         tiempo = 5000;
@@ -77,16 +149,13 @@ function Empezarjuego(eltiempo)
             puntos3 = document.createElement("p");
             puntos3.textContent= "Precisión: "+porcentajeacierto.toFixed(2)+"%";
 
-            decirGanador(puntuacion, tiempo);
+            // decirGanador(puntuacion, tiempo);
           
             puntos1.id="puntosa";
             puntos2.id="puntosb";
             puntos3.id="puntosc";
 
-            // let puntuacionFinal = [puntuacion, porcentajeacierto];
-
             decirGanador(puntuacion, tiempo).then(data => alert(data)).catch(data=>alert(data));
-           
     
             botonvolver = document.getElementById("pantallafinalvolver");
             document.getElementById("pantallafinal").insertBefore(puntos1, botonvolver);
@@ -99,14 +168,12 @@ function Empezarjuego(eltiempo)
             }
 
             target.style.display = 'none';
-            juegoIniciado = false;
-             
+            juegoIniciado = false; 
             clearTimeout(intervalodesaparecer);
         }, tiempo); 
     }
     
 }
-
 
 
 function decirGanador(numero, tiempo) 
@@ -116,7 +183,7 @@ function decirGanador(numero, tiempo)
         return new Promise((resolve, reject) => {
             setTimeout(function () {
             if (numero > 7) {
-            resolve("aciertos o mas ¡que locura!");
+            resolve("Mas de 7 aciertos,  ¡que locura!");
             } else {
             reject("Hay que espabilar!");
             }
@@ -152,7 +219,6 @@ function decirGanador(numero, tiempo)
         }
     }
    }
-
 
 function reposicionar() 
 {
@@ -208,7 +274,26 @@ function falloclick()
     if (juegoIniciado)
     {
         clicks +=1;     
+
+        const posX = event.clientX - 40;  // Resta la mitad del ancho de la imagen
+        const posY = event.clientY - 60;  // Resta la mitad de la altura de la imagen
+        // Mostrar la imagen en la posición del clic
+        const imagenClick = document.getElementById('imagenClick');
+        imagenClick.style.left = posX + 'px';
+        imagenClick.style.top = posY + 'px';
+        imagenClick.style.display = 'block';
+
+        // Ocultar la imagen después de un segundo
+        setTimeout(function () {
+            imagenClick.style.display = 'none';
+        }, 1000);
     }        
 }
+
+
+
+
+
+
 
 

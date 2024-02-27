@@ -21,7 +21,9 @@
             <option value="3"><label>15s</label></option>
         </select>
 
-        <button onclick="Empezarjuego(document.getElementById('tiempo').value)"><p class="opcion">JUGAR</p></button>
+        <!-- <button onclick="Empezarjuego(document.getElementById('tiempo').value)"><p class="opcion">JUGAR</p></button> -->
+        <button onclick="iniciarCuentaRegresiva()"><p class="opcion">JUGAR</p></button>
+
 
         <div id="instrucciones">
             <div id="instrucciones-contenedor">
@@ -42,12 +44,12 @@
 <div id="target"></div>
 
 
-<imagen-generada src="fuego.webp"></imagen-generada>
+<img id="imagenClick" src="fueguito.webp" alt="Imagen de clic" style="position: absolute; display: none; width: 80px; height:60px;">
+
 
 
 
 <script src="JesusUtrilla_Práctica5.js"></script>
-<script src="componenteweb.js"></script>
     
 </body>
 </html>

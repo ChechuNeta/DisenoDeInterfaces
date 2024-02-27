@@ -153,6 +153,13 @@ select:hover, button:hover
     display: block;
 }
 
+#cuentaRegresiva
+{
+    font-size: 5em;
+    font-family: 'Press Start 2P', cursive; /* Usa una fuente de estilo retro de videojuego */
+    color: rgb(131, 111, 111); 
+}
+
 
 
 
